@@ -46,11 +46,11 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
         href="https://github.com/apigee-127/swagger-tools"
-        
+
     >swagger-tools (v0.10.1)</a>
 </h1>
 <h4>Various tools for using and integrating with Swagger.</h4>
@@ -58,283 +58,283 @@
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools">module swagger-tools</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.initializeMiddleware">
             function <span class="apidocSignatureSpan">swagger-tools.</span>initializeMiddleware
             <span class="apidocSignatureSpan">(rlOrSO, resources, callback)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>helpers</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>specs</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>validators</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools.helpers">module swagger-tools.helpers</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.createJsonValidator">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>createJsonValidator
             <span class="apidocSignatureSpan">(schemas)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.formatResults">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>formatResults
             <span class="apidocSignatureSpan">(results)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getErrorCount">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getErrorCount
             <span class="apidocSignatureSpan">(results)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getSpec">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSpec
             <span class="apidocSignatureSpan">(version, throwError)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getSwaggerVersion">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSwaggerVersion
             <span class="apidocSignatureSpan">(document)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.printValidationResults">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>printValidationResults
             <span class="apidocSignatureSpan">(version, apiDOrSO, apiDeclarations, results, printSummary)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.registerCustomFormats">
             function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>registerCustomFormats
             <span class="apidocSignatureSpan">(json)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.helpers.</span>swaggerOperationMethods</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools.validators">module swagger-tools.validators</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateAgainstSchema">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateAgainstSchema
             <span class="apidocSignatureSpan">(schemaOrName, data, validator)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateArrayType">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateArrayType
             <span class="apidocSignatureSpan">(schema)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateContentType">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateContentType
             <span class="apidocSignatureSpan">(gPOrC, oPOrC, reqOrRes)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateEnum">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateEnum
             <span class="apidocSignatureSpan">(val, allowed)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxItems">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxItems
             <span class="apidocSignatureSpan">(val, maxItems)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxLength">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxLength
             <span class="apidocSignatureSpan">(val, maxLength)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxProperties">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxProperties
             <span class="apidocSignatureSpan">(val, maxProperties)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaximum">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaximum
             <span class="apidocSignatureSpan">(val, maximum, type, exclusive)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinItems">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinItems
             <span class="apidocSignatureSpan">(val, minItems)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinLength">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinLength
             <span class="apidocSignatureSpan">(val, minLength)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinProperties">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinProperties
             <span class="apidocSignatureSpan">(val, minProperties)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinimum">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinimum
             <span class="apidocSignatureSpan">(val, minimum, type, exclusive)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMultipleOf">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMultipleOf
             <span class="apidocSignatureSpan">(val, multipleOf)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validatePattern">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validatePattern
             <span class="apidocSignatureSpan">(val, pattern)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateRequiredness">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateRequiredness
             <span class="apidocSignatureSpan">(val, required)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateSchemaConstraints">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateSchemaConstraints
             <span class="apidocSignatureSpan">(version, schema, path, val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateTypeAndFormat">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateTypeAndFormat
             <span class="apidocSignatureSpan">(version, val, type, format, allowEmptyValue, skipError)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateUniqueItems">
             function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateUniqueItems
             <span class="apidocSignatureSpan">(val, isUnique)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.swagger-tools" id="apidoc.module.swagger-tools">module swagger-tools</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.initializeMiddleware" id="apidoc.element.swagger-tools.initializeMiddleware">
         function <span class="apidocSignatureSpan">swagger-tools.</span>initializeMiddleware
@@ -447,20 +447,20 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.swagger-tools.helpers" id="apidoc.module.swagger-tools.helpers">module swagger-tools.helpers</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.createJsonValidator" id="apidoc.element.swagger-tools.helpers.createJsonValidator">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>createJsonValidator
@@ -511,8 +511,8 @@
 };
 
 var validateAgainstSchema = function (spec, schemaOrName, data, callback) {
-var validator = _.isString(schemaOrName) ? spec.validators[schemaOrName] : helpers.<span class="apidocCodeKeywordSpan">createJso\
-nValidator</span>();
+var validator = _.isString(schemaOrName) ? spec.validators[schemaOrName] : helpers.<span class="apidocCodeKeywordSpan">createJsonValidator
+</span>();
 
 helpers.registerCustomFormats(data);
 
@@ -522,9 +522,9 @@ try {
   if (err.failedValidation) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.formatResults" id="apidoc.element.swagger-tools.helpers.formatResults">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>formatResults
@@ -565,9 +565,9 @@ var validateSemantically = function (spec, rlOrSO, apiDeclarations, callback) {
 };
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.getErrorCount" id="apidoc.element.swagger-tools.helpers.getErrorCount">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getErrorCount
@@ -608,9 +608,9 @@ results = {
   warnings: []
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.getSpec" id="apidoc.element.swagger-tools.helpers.getSpec">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSpec
@@ -663,9 +663,9 @@ if (spec.version === &#x27;1.2&#x27;) {
   } else if (!_.isArray(resources)) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.getSwaggerVersion" id="apidoc.element.swagger-tools.helpers.getSwaggerVersion">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSwaggerVersion
@@ -694,9 +694,9 @@ if (spec.version === &#x27;1.2&#x27;) {
   } else if (!_.isArray(resources)) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.printValidationResults" id="apidoc.element.swagger-tools.helpers.printValidationResults">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>printValidationResults
@@ -796,9 +796,9 @@ if (process.env.RUNNING_SWAGGER_TOOLS_TESTS === &#x27;true&#x27;) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.helpers.registerCustomFormats" id="apidoc.element.swagger-tools.helpers.registerCustomFormats">
         function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>registerCustomFormats
@@ -836,16 +836,16 @@ try {
   } else {
 ...</pre></li>
     </ul>
-    
-    
-    
-    
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.swagger-tools.validators" id="apidoc.module.swagger-tools.validators">module swagger-tools.validators</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateAgainstSchema" id="apidoc.element.swagger-tools.validators.validateAgainstSchema">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateAgainstSchema
@@ -933,9 +933,9 @@ try {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateArrayType" id="apidoc.element.swagger-tools.validators.validateArrayType">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateArrayType
@@ -951,9 +951,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateContentType" id="apidoc.element.swagger-tools.validators.validateContentType">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateContentType
@@ -987,9 +987,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateEnum" id="apidoc.element.swagger-tools.validators.validateEnum">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateEnum
@@ -1004,9 +1004,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMaxItems" id="apidoc.element.swagger-tools.validators.validateMaxItems">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxItems
@@ -1021,9 +1021,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMaxLength" id="apidoc.element.swagger-tools.validators.validateMaxLength">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxLength
@@ -1038,9 +1038,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMaxProperties" id="apidoc.element.swagger-tools.validators.validateMaxProperties">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxProperties
@@ -1058,9 +1058,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMaximum" id="apidoc.element.swagger-tools.validators.validateMaximum">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaximum
@@ -1095,9 +1095,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMinItems" id="apidoc.element.swagger-tools.validators.validateMinItems">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinItems
@@ -1112,9 +1112,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMinLength" id="apidoc.element.swagger-tools.validators.validateMinLength">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinLength
@@ -1129,9 +1129,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMinProperties" id="apidoc.element.swagger-tools.validators.validateMinProperties">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinProperties
@@ -1149,9 +1149,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMinimum" id="apidoc.element.swagger-tools.validators.validateMinimum">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinimum
@@ -1186,9 +1186,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateMultipleOf" id="apidoc.element.swagger-tools.validators.validateMultipleOf">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMultipleOf
@@ -1203,9 +1203,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validatePattern" id="apidoc.element.swagger-tools.validators.validatePattern">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validatePattern
@@ -1220,9 +1220,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateRequiredness" id="apidoc.element.swagger-tools.validators.validateRequiredness">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateRequiredness
@@ -1237,9 +1237,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateSchemaConstraints" id="apidoc.element.swagger-tools.validators.validateSchemaConstraints">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateSchemaConstraints
@@ -1361,8 +1361,8 @@ try {
 
 var validateSchemaConstraints = function (documentMetadata, schema, path, results, skip) {
   try {
-    validators.<span class="apidocCodeKeywordSpan">validateSchemaConstraints</span>(documentMetadata.swaggerVersion, schema, pat\
-h, undefined);
+    validators.<span class="apidocCodeKeywordSpan">validateSchemaConstraints</span>(documentMetadata.swaggerVersion, schema, path
+, undefined);
   } catch (err) {
     if (!skip) {
       createErrorOrWarning(err.code, err.message, err.path, results.errors);
@@ -1371,9 +1371,9 @@ h, undefined);
 };
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateTypeAndFormat" id="apidoc.element.swagger-tools.validators.validateTypeAndFormat">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateTypeAndFormat
@@ -1455,9 +1455,9 @@ h, undefined);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.swagger-tools.validators.validateUniqueItems" id="apidoc.element.swagger-tools.validators.validateUniqueItems">
         function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateUniqueItems
@@ -1472,8 +1472,8 @@ h, undefined);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocFooterDiv">
