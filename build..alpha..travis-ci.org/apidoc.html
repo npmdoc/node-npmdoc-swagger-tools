@@ -985,7 +985,23 @@ try {
     throw new Error(&#x27;Invalid content type (&#x27; + contentType + &#x27;).  These are valid: &#x27; + pOrC.join(&#x27;, &#x27;));
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      sendData(swaggerVersion, res, data, encoding, true);
+      return; // do NOT call next() here, doing so would execute remaining middleware chain twice
+    }
+
+    try {
+      // Validate the content type
+      try {
+validators.<span class="apidocCodeKeywordSpan">validateContentType</span>(req.swagger.apiDeclaration ?
+                                 req.swagger.apiDeclaration.produces :
+                                 req.swagger.swaggerObject.produces,
+                               operation.produces, res);
+      } catch (err) {
+err.failedValidation = true;
+
+throw err;
+...</pre></li>
     </ul>
 
 
@@ -1235,7 +1251,23 @@ try {
     throwErrorWithCode(&#x27;REQUIRED&#x27;, &#x27;Is required&#x27;);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+paramName = schema.name;
+paramPath = swaggerVersion === &#x27;1.2&#x27; ?
+  req.swagger.operationPath.concat([&#x27;params&#x27;, paramIndex.toString()]) :
+  parameter.path;
+val = req.swagger.params[paramName].value;
+
+// Validate requiredness
+validators.<span class="apidocCodeKeywordSpan">validateRequiredness</span>(val, schema.required);
+
+// Quick return if the value is not present
+if (_.isUndefined(val)) {
+  return oCallback();
+}
+
+validateValue(req, schema, paramPath, val, oCallback);
+...</pre></li>
     </ul>
 
 
