@@ -1,11 +1,13 @@
-# api documentation for  [swagger-tools (v0.10.1)](https://github.com/apigee-127/swagger-tools)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-tools.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-tools)
+# api documentation for  [swagger-tools (v0.10.1)](https://github.com/apigee-127/swagger-tools)  [![npm package](https://img.shields.io/npm/v/npmdoc-swagger-tools.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swagger-tools) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-tools.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-tools)
 #### Various tools for using and integrating with Swagger.
 
 [![NPM](https://nodei.co/npm/swagger-tools.png?downloads=true)](https://www.npmjs.com/package/swagger-tools)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-swagger_tools_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-tools/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-swagger-tools%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-swagger-tools/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -766,7 +768,23 @@ validateContentType = function (gPOrC, oPOrC, reqOrRes) {
 ```
 - example usage
 ```shell
-n/a
+...
+      sendData(swaggerVersion, res, data, encoding, true);
+      return; // do NOT call next() here, doing so would execute remaining middleware chain twice
+    }
+
+    try {
+      // Validate the content type
+      try {
+validators.validateContentType(req.swagger.apiDeclaration ?
+                                 req.swagger.apiDeclaration.produces :
+                                 req.swagger.swaggerObject.produces,
+                               operation.produces, res);
+      } catch (err) {
+err.failedValidation = true;
+
+throw err;
+...
 ```
 
 #### <a name="apidoc.element.swagger-tools.validators.validateEnum"></a>[function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateEnum (val, allowed)](#apidoc.element.swagger-tools.validators.validateEnum)
@@ -980,7 +998,23 @@ validateRequiredness = function (val, required) {
 ```
 - example usage
 ```shell
-n/a
+...
+paramName = schema.name;
+paramPath = swaggerVersion === '1.2' ?
+  req.swagger.operationPath.concat(['params', paramIndex.toString()]) :
+  parameter.path;
+val = req.swagger.params[paramName].value;
+
+// Validate requiredness
+validators.validateRequiredness(val, schema.required);
+
+// Quick return if the value is not present
+if (_.isUndefined(val)) {
+  return oCallback();
+}
+
+validateValue(req, schema, paramPath, val, oCallback);
+...
 ```
 
 #### <a name="apidoc.element.swagger-tools.validators.validateSchemaConstraints"></a>[function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateSchemaConstraints (version, schema, path, val)](#apidoc.element.swagger-tools.validators.validateSchemaConstraints)
