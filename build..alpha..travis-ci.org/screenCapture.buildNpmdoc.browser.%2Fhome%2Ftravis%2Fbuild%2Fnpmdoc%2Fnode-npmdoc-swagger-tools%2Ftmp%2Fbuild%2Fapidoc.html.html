@@ -1,0 +1,1510 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/apigee-127/swagger-tools">swagger-tools (v0.10.1)</a>
+</h1>
+<h4>Various tools for using and integrating with Swagger.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools">module swagger-tools</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.initializeMiddleware">
+            function <span class="apidocSignatureSpan">swagger-tools.</span>initializeMiddleware
+            <span class="apidocSignatureSpan">(rlOrSO, resources, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>specs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.</span>validators</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools.helpers">module swagger-tools.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.createJsonValidator">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>createJsonValidator
+            <span class="apidocSignatureSpan">(schemas)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.formatResults">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>formatResults
+            <span class="apidocSignatureSpan">(results)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getErrorCount">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getErrorCount
+            <span class="apidocSignatureSpan">(results)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getSpec">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSpec
+            <span class="apidocSignatureSpan">(version, throwError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.getSwaggerVersion">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSwaggerVersion
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.printValidationResults">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>printValidationResults
+            <span class="apidocSignatureSpan">(version, apiDOrSO, apiDeclarations, results, printSummary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.helpers.registerCustomFormats">
+            function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>registerCustomFormats
+            <span class="apidocSignatureSpan">(json)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swagger-tools.helpers.</span>swaggerOperationMethods</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swagger-tools.validators">module swagger-tools.validators</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateAgainstSchema">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateAgainstSchema
+            <span class="apidocSignatureSpan">(schemaOrName, data, validator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateArrayType">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateArrayType
+            <span class="apidocSignatureSpan">(schema)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateContentType">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateContentType
+            <span class="apidocSignatureSpan">(gPOrC, oPOrC, reqOrRes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateEnum">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateEnum
+            <span class="apidocSignatureSpan">(val, allowed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxItems">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxItems
+            <span class="apidocSignatureSpan">(val, maxItems)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxLength">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxLength
+            <span class="apidocSignatureSpan">(val, maxLength)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaxProperties">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxProperties
+            <span class="apidocSignatureSpan">(val, maxProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMaximum">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaximum
+            <span class="apidocSignatureSpan">(val, maximum, type, exclusive)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinItems">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinItems
+            <span class="apidocSignatureSpan">(val, minItems)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinLength">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinLength
+            <span class="apidocSignatureSpan">(val, minLength)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinProperties">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinProperties
+            <span class="apidocSignatureSpan">(val, minProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMinimum">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinimum
+            <span class="apidocSignatureSpan">(val, minimum, type, exclusive)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateMultipleOf">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMultipleOf
+            <span class="apidocSignatureSpan">(val, multipleOf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validatePattern">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validatePattern
+            <span class="apidocSignatureSpan">(val, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateRequiredness">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateRequiredness
+            <span class="apidocSignatureSpan">(val, required)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateSchemaConstraints">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateSchemaConstraints
+            <span class="apidocSignatureSpan">(version, schema, path, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateTypeAndFormat">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateTypeAndFormat
+            <span class="apidocSignatureSpan">(version, val, type, format, allowEmptyValue, skipError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-tools.validators.validateUniqueItems">
+            function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateUniqueItems
+            <span class="apidocSignatureSpan">(val, isUnique)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swagger-tools" id="apidoc.module.swagger-tools">module swagger-tools</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.initializeMiddleware" id="apidoc.element.swagger-tools.initializeMiddleware">
+        function <span class="apidocSignatureSpan">swagger-tools.</span>initializeMiddleware
+        <span class="apidocSignatureSpan">(rlOrSO, resources, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function initializeMiddleware(rlOrSO, resources, callback) {
+  var args;
+  var spec;
+
+  debug('Initializing middleware');
+
+  if (_.isUndefined(rlOrSO)) {
+    throw new Error('rlOrSO is required');
+  } else if (!_.isPlainObject(rlOrSO)) {
+    throw new TypeError('rlOrSO must be an object');
+  }
+
+  args = [rlOrSO];
+  spec = helpers.getSpec(helpers.getSwaggerVersion(rlOrSO), true);
+
+  debug('  Identified Swagger version: %s', spec.version);
+
+  if (spec.version === '1.2') {
+    if (_.isUndefined(resources)) {
+      throw new Error('resources is required');
+    } else if (!_.isArray(resources)) {
+      throw new TypeError('resources must be an array');
+    }
+
+    debug('  Number of API Declarations: %d', resources.length);
+
+    args.push(resources);
+  } else {
+    callback = arguments[1];
+  }
+
+  if (_.isUndefined(callback)) {
+    throw new Error('callback is required');
+  } else if (!_.isFunction(callback)) {
+    throw new TypeError('callback must be a function');
+  }
+
+  args.push(function (err, results) {
+    if (results &amp;&amp; results.errors.length + _.reduce(results.apiDeclarations || [], function (count, apiDeclaration) {
+      return count += (apiDeclaration ? apiDeclaration.errors.length : 0);
+    }, 0) &gt; 0) {
+      err = new Error('Swagger document(s) failed validation so the server cannot start');
+
+      err.failedValidation = true;
+      err.results = results;
+    }
+
+    debug('  Validation: %s', err ? 'failed' : 'succeeded');
+
+    try {
+      if (err) {
+        throw err;
+      }
+
+      callback({
+        // Create a wrapper to avoid having to pass the non-optional arguments back to the swaggerMetadata middleware
+        swaggerMetadata: function () {
+          var swaggerMetadata = require('./middleware/swagger-metadata');
+
+          return swaggerMetadata.apply(undefined, args.slice(0, args.length - 1));
+        },
+        swaggerRouter: require('./middleware/swagger-router'),
+        swaggerSecurity: require('./middleware/swagger-security'),
+        // Create a wrapper to avoid having to pass the non-optional arguments back to the swaggerUi middleware
+        swaggerUi: function (options) {
+          var swaggerUi = require('./middleware/swagger-ui');
+          var suArgs = [rlOrSO];
+
+          if (spec.version === '1.2') {
+            suArgs.push(_.reduce(resources, function (map, resource) {
+              map[resource.resourcePath] = resource;
+
+              return map;
+            }, {}));
+          }
+
+          suArgs.push(options || {});
+
+          return swaggerUi.apply(undefined, suArgs);
+        },
+        swaggerValidator: require('./middleware/swagger-validator')
+      });
+    } catch (err) {
+      if (process.env.RUNNING_SWAGGER_TOOLS_TESTS === 'true') {
+        // When running the swagger-tools test suite, we want to return an error instead of exiting the process.  This
+        // does not mean that this function is an error-first callback but due to json-refs using Promises, we have to
+        // return the error to avoid the error being swallowed.
+        callback(err);
+      } else {
+        if (err.failedValidation === true) {
+          helpers.printValidationResults(spec.version, rlOrSO, resources, results, true);
+        } else {
+          console.error('Error initializing middleware');
+          console.error(err.stack);
+        }
+
+        process.exit(1);
+      }
+    }
+  });
+
+  spec.validate.apply(spec, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swagger-tools.helpers" id="apidoc.module.swagger-tools.helpers">module swagger-tools.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.createJsonValidator" id="apidoc.element.swagger-tools.helpers.createJsonValidator">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>createJsonValidator
+        <span class="apidocSignatureSpan">(schemas)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createJsonValidator = function (schemas) {
+  var validator = new ZSchema({
+    breakOnFirstError: false,
+    reportPathAsArray: true
+  });
+  var result;
+
+  // Add the draft-04 spec
+  validator.setRemoteReference(draft04Url, draft04Json);
+
+  // Swagger uses some unsupported/invalid formats so just make them all pass
+  _.each(customJsonSchemaFormats, function (format) {
+    ZSchema.registerFormat(format, function () {
+      return true;
+    });
+  });
+
+  // Compile and validate the schemas
+  if (!_.isUndefined(schemas)) {
+    result = validator.compileSchema(schemas);
+
+    // If there is an error, it's unrecoverable so just blow the eff up
+    if (result === false) {
+      console.error('JSON Schema file' + (schemas.length &gt; 1 ? 's are' : ' is') + ' invalid:');
+
+      _.each(validator.getLastErrors(), function (err) {
+        console.error('  ' + (_.isArray(err.path) ? JsonRefs.pathToPtr(err.path) : err.path) + ': ' + err.message);
+      });
+
+      throw new Error('Unable to create validator due to invalid JSON Schema');
+    }
+  }
+
+  return validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .catch(callback);
+} else {
+  callback();
+}
+};
+
+var validateAgainstSchema = function (spec, schemaOrName, data, callback) {
+var validator = _.isString(schemaOrName) ? spec.validators[schemaOrName] : helpers.<span class="apidocCodeKeywordSpan">createJsonValidator
+</span>();
+
+helpers.registerCustomFormats(data);
+
+try {
+  validators.validateAgainstSchema(schemaOrName, data, validator);
+} catch (err) {
+  if (err.failedValidation) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.formatResults" id="apidoc.element.swagger-tools.helpers.formatResults">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>formatResults
+        <span class="apidocSignatureSpan">(results)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatResults = function (results) {
+  if (results) {
+    // Update the results based on its content to indicate success/failure accordingly
+    results = (results.errors.length + results.warnings.length +
+    _.reduce(results.apiDeclarations, function (count, aResult) {
+      if (aResult) {
+        count += aResult.errors.length + aResult.warnings.length;
+      }
+
+      return count;
+    }, 0) &gt; 0) ? results : undefined;
+  }
+
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  validateDefinitions(documentMetadata, results);
+
+  callback(undefined, results);
+};
+
+var validateSemantically = function (spec, rlOrSO, apiDeclarations, callback) {
+  var cbWrapper = function (err, results) {
+    callback(err, helpers.<span class="apidocCodeKeywordSpan">formatResults</span>(results));
+  };
+  if (spec.version === '1.2') {
+    validateSwagger1_2(spec, rlOrSO, apiDeclarations, cbWrapper); // jshint ignore:line
+  } else {
+    validateSwagger2_0(spec, rlOrSO, cbWrapper); // jshint ignore:line
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.getErrorCount" id="apidoc.element.swagger-tools.helpers.getErrorCount">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getErrorCount
+        <span class="apidocSignatureSpan">(results)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrorCount = function (results) {
+  var errors = 0;
+
+  if (results) {
+    errors = results.errors.length;
+
+    _.each(results.apiDeclarations, function (adResults) {
+      if (adResults) {
+        errors += adResults.errors.length;
+      }
+    });
+  }
+
+  return errors;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Specification.prototype.composeModel = function (apiDOrSO, modelIdOrRef, callback) {
+  var swaggerVersion = helpers.getSwaggerVersion(apiDOrSO);
+  var doComposition = function (err, results) {
+var documentMetadata;
+
+if (err) {
+  return callback(err);
+} else if (helpers.<span class="apidocCodeKeywordSpan">getErrorCount</span>(results) &gt; 0) {
+  return handleValidationError(results, callback);
+}
+
+documentMetadata = getDocumentCache(apiDOrSO);
+results = {
+  errors: [],
+  warnings: []
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.getSpec" id="apidoc.element.swagger-tools.helpers.getSpec">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSpec
+        <span class="apidocSignatureSpan">(version, throwError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSpec = function (version, throwError) {
+  var spec;
+
+  version = coerceVersion(version);
+  spec = specCache[version];
+
+  if (_.isUndefined(spec)) {
+    switch (version) {
+    case '1.2':
+      spec = require('../lib/specs').v1_2; // jshint ignore:line
+
+      break;
+
+    case '2.0':
+      spec = require('../lib/specs').v2_0; // jshint ignore:line
+
+      break;
+
+    default:
+      if (throwError === true) {
+        throw new Error('Unsupported Swagger version: ' + version);
+      }
+    }
+  }
+
+  return spec;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (_.isUndefined(rlOrSO)) {
+  throw new Error('rlOrSO is required');
+} else if (!_.isPlainObject(rlOrSO)) {
+  throw new TypeError('rlOrSO must be an object');
+}
+
+args = [rlOrSO];
+spec = helpers.<span class="apidocCodeKeywordSpan">getSpec</span>(helpers.getSwaggerVersion(rlOrSO), true);
+
+debug('  Identified Swagger version: %s', spec.version);
+
+if (spec.version === '1.2') {
+  if (_.isUndefined(resources)) {
+    throw new Error('resources is required');
+  } else if (!_.isArray(resources)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.getSwaggerVersion" id="apidoc.element.swagger-tools.helpers.getSwaggerVersion">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>getSwaggerVersion
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSwaggerVersion = function (document) {
+  return _.isPlainObject(document) ? coerceVersion(document.swaggerVersion || document.swagger) : undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (_.isUndefined(rlOrSO)) {
+  throw new Error('rlOrSO is required');
+} else if (!_.isPlainObject(rlOrSO)) {
+  throw new TypeError('rlOrSO must be an object');
+}
+
+args = [rlOrSO];
+spec = helpers.getSpec(helpers.<span class="apidocCodeKeywordSpan">getSwaggerVersion</span>(rlOrSO), true);
+
+debug('  Identified Swagger version: %s', spec.version);
+
+if (spec.version === '1.2') {
+  if (_.isUndefined(resources)) {
+    throw new Error('resources is required');
+  } else if (!_.isArray(resources)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.printValidationResults" id="apidoc.element.swagger-tools.helpers.printValidationResults">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>printValidationResults
+        <span class="apidocSignatureSpan">(version, apiDOrSO, apiDeclarations, results, printSummary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printValidationResults = function (version, apiDOrSO, apiDeclarations, results, printSummary) {
+  var hasErrors = getErrorCount(results) &gt; 0;
+  var stream = hasErrors ? console.error : console.log;
+  var pluralize = function (string, count) {
+    return count === 1 ? string : string + 's';
+  };
+  var printErrorsOrWarnings = function (header, entries, indent) {
+    if (header) {
+      stream(header + ':');
+      stream();
+    }
+
+    _.each(entries, function (entry) {
+      stream(new Array(indent + 1).join(' ') + JsonRefs.pathToPtr(entry.path) + ': ' + entry.message);
+
+      if (entry.inner) {
+        printErrorsOrWarnings (undefined, entry.inner, indent + 2);
+      }
+    });
+
+    if (header) {
+      stream();
+    }
+  };
+  var errorCount = 0;
+  var warningCount = 0;
+
+  stream();
+
+  if (results.errors.length &gt; 0) {
+    errorCount += results.errors.length;
+
+    printErrorsOrWarnings('API Errors', results.errors, 2);
+  }
+
+  if (results.warnings.length &gt; 0) {
+    warningCount += results.warnings.length;
+
+    printErrorsOrWarnings('API Warnings', results.warnings, 2);
+  }
+
+  if (results.apiDeclarations) {
+    results.apiDeclarations.forEach(function (adResult, index) {
+      if (!adResult) {
+        return;
+      }
+
+      var name = apiDeclarations[index].resourcePath || index;
+
+      if (adResult.errors.length &gt; 0) {
+        errorCount += adResult.errors.length;
+
+        printErrorsOrWarnings('  API Declaration (' + name + ') Errors', adResult.errors, 4);
+      }
+
+      if (adResult.warnings.length &gt; 0) {
+        warningCount += adResult.warnings.length;
+
+        printErrorsOrWarnings('  API Declaration (' + name + ') Warnings', adResult.warnings, 4);
+      }
+    });
+  }
+
+  if (printSummary) {
+    if (errorCount &gt; 0) {
+      stream(errorCount + ' ' + pluralize('error', errorCount) + ' and ' + warningCount + ' ' +
+                    pluralize('warning', warningCount));
+    } else {
+      stream('Validation succeeded but with ' + warningCount + ' ' + pluralize('warning', warningCount));
+    }
+  }
+
+  stream();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (process.env.RUNNING_SWAGGER_TOOLS_TESTS === 'true') {
+  // When running the swagger-tools test suite, we want to return an error instead of exiting the process.  This
+  // does not mean that this function is an error-first callback but due to json-refs using Promises, we have to
+  // return the error to avoid the error being swallowed.
+  callback(err);
+} else {
+  if (err.failedValidation === true) {
+    helpers.<span class="apidocCodeKeywordSpan">printValidationResults</span>(spec.version, rlOrSO, resources, results, true);
+  } else {
+    console.error('Error initializing middleware');
+    console.error(err.stack);
+  }
+
+  process.exit(1);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.helpers.registerCustomFormats" id="apidoc.element.swagger-tools.helpers.registerCustomFormats">
+        function <span class="apidocSignatureSpan">swagger-tools.helpers.</span>registerCustomFormats
+        <span class="apidocSignatureSpan">(json)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerCustomFormats = function (json) {
+  traverse(json).forEach(function () {
+    var name = this.key;
+    var format = this.node;
+
+    if (name === 'format' &amp;&amp; _.indexOf(ZSchema.getRegisteredFormats(), format) === -1) {
+      ZSchema.registerFormat(format, function () {
+        return true;
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  callback();
+}
+};
+
+var validateAgainstSchema = function (spec, schemaOrName, data, callback) {
+var validator = _.isString(schemaOrName) ? spec.validators[schemaOrName] : helpers.createJsonValidator();
+
+helpers.<span class="apidocCodeKeywordSpan">registerCustomFormats</span>(data);
+
+try {
+  validators.validateAgainstSchema(schemaOrName, data, validator);
+} catch (err) {
+  if (err.failedValidation) {
+    return callback(undefined, err.results);
+  } else {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swagger-tools.validators" id="apidoc.module.swagger-tools.validators">module swagger-tools.validators</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateAgainstSchema" id="apidoc.element.swagger-tools.validators.validateAgainstSchema">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateAgainstSchema
+        <span class="apidocSignatureSpan">(schemaOrName, data, validator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateAgainstSchema = function (schemaOrName, data, validator) {
+  var sanitizeError = function (obj) {
+    // Make anyOf/oneOf errors more human readable (Issue 200)
+    var defType = ['additionalProperties', 'items'].indexOf(obj.path[obj.path.length - 1]) &gt; -1 ?
+          'schema' :
+          obj.path[obj.path.length - 2];
+
+    if (['ANY_OF_MISSING', 'ONE_OF_MISSING'].indexOf(obj.code) &gt; -1) {
+      switch (defType) {
+      case 'parameters':
+        defType = 'parameter';
+        break;
+
+      case 'responses':
+        defType = 'response';
+        break;
+
+      case 'schema':
+        defType += ' ' + obj.path[obj.path.length - 1];
+
+        // no default
+      }
+
+      obj.message = 'Not a valid ' + defType + ' definition';
+    }
+
+    // Remove the params portion of the error
+    delete obj.params;
+    delete obj.schemaId;
+
+    if (obj.inner) {
+      _.each(obj.inner, function (nObj) {
+        sanitizeError(nObj);
+      });
+    }
+  };
+  var schema = _.isPlainObject(schemaOrName) ? _.cloneDeep(schemaOrName) : schemaOrName;
+
+  // We don't check this due to internal usage but if validator is not provided, schemaOrName must be a schema
+  if (_.isUndefined(validator)) {
+    validator = helpers.createJsonValidator([schema]);
+  }
+
+  var valid = validator.validate(data, schema);
+
+  if (!valid) {
+    try {
+      throwErrorWithCode('SCHEMA_VALIDATION_FAILED', 'Failed schema validation');
+    } catch (err) {
+      err.results = {
+        errors: _.map(validator.getLastErrors(), function (err) {
+          sanitizeError(err);
+
+          return err;
+        }),
+        warnings: []
+      };
+
+      throw err;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var validateAgainstSchema = function (spec, schemaOrName, data, callback) {
+var validator = _.isString(schemaOrName) ? spec.validators[schemaOrName] : helpers.createJsonValidator();
+
+helpers.registerCustomFormats(data);
+
+try {
+  validators.<span class="apidocCodeKeywordSpan">validateAgainstSchema</span>(schemaOrName, data, validator);
+} catch (err) {
+  if (err.failedValidation) {
+    return callback(undefined, err.results);
+  } else {
+    return callback(err);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateArrayType" id="apidoc.element.swagger-tools.validators.validateArrayType">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateArrayType
+        <span class="apidocSignatureSpan">(schema)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateArrayType = function (schema) {
+  // We have to do this manually for now
+  if (schema.type === 'array' &amp;&amp; _.isUndefined(schema.items)) {
+    throwErrorWithCode('OBJECT_MISSING_REQUIRED_PROPERTY', 'Missing required property: items');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateContentType" id="apidoc.element.swagger-tools.validators.validateContentType">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateContentType
+        <span class="apidocSignatureSpan">(gPOrC, oPOrC, reqOrRes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateContentType = function (gPOrC, oPOrC, reqOrRes) {
+  // http://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html#sec7.2.1
+  var isResponse = typeof reqOrRes.end === 'function';
+  var contentType = isResponse ? reqOrRes.getHeader('content-type') : reqOrRes.headers['content-type'];
+  var pOrC = _.map(_.union(gPOrC, oPOrC), function (contentType) {
+    return contentType.split(';')[0];
+  });
+
+  if (!contentType) {
+    if (isResponse) {
+      contentType = 'text/plain';
+    } else {
+      contentType = 'application/octet-stream';
+    }
+  }
+
+  contentType = contentType.split(';')[0];
+
+  if (pOrC.length &gt; 0 &amp;&amp; (isResponse ?
+                          true :
+                          ['POST', 'PUT'].indexOf(reqOrRes.method) !== -1) &amp;&amp; pOrC.indexOf(contentType) === -1) {
+    throw new Error('Invalid content type (' + contentType + ').  These are valid: ' + pOrC.join(', '));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      sendData(swaggerVersion, res, data, encoding, true);
+      return; // do NOT call next() here, doing so would execute remaining middleware chain twice
+    }
+
+    try {
+      // Validate the content type
+      try {
+validators.<span class="apidocCodeKeywordSpan">validateContentType</span>(req.swagger.apiDeclaration ?
+                                 req.swagger.apiDeclaration.produces :
+                                 req.swagger.swaggerObject.produces,
+                               operation.produces, res);
+      } catch (err) {
+err.failedValidation = true;
+
+throw err;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateEnum" id="apidoc.element.swagger-tools.validators.validateEnum">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateEnum
+        <span class="apidocSignatureSpan">(val, allowed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateEnum = function (val, allowed) {
+  if (!_.isUndefined(allowed) &amp;&amp; !_.isUndefined(val) &amp;&amp; allowed.indexOf(val) === -1) {
+    throwErrorWithCode('ENUM_MISMATCH', 'Not an allowable value (' + allowed.join(', ') + '): ' + val);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMaxItems" id="apidoc.element.swagger-tools.validators.validateMaxItems">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxItems
+        <span class="apidocSignatureSpan">(val, maxItems)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaxItems = function (val, maxItems) {
+  if (!_.isUndefined(maxItems) &amp;&amp; val.length &gt; maxItems) {
+    throwErrorWithCode('ARRAY_LENGTH_LONG', 'Array is too long (' + val.length + '), maximum ' + maxItems);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMaxLength" id="apidoc.element.swagger-tools.validators.validateMaxLength">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxLength
+        <span class="apidocSignatureSpan">(val, maxLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaxLength = function (val, maxLength) {
+  if (!_.isUndefined(maxLength) &amp;&amp; val.length &gt; maxLength) {
+    throwErrorWithCode('MAX_LENGTH', 'String is too long (' + val.length + ' chars), maximum ' + maxLength);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMaxProperties" id="apidoc.element.swagger-tools.validators.validateMaxProperties">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaxProperties
+        <span class="apidocSignatureSpan">(val, maxProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaxProperties = function (val, maxProperties) {
+  var propCount = _.isPlainObject(val) ? Object.keys(val).length : 0;
+
+  if (!_.isUndefined(maxProperties) &amp;&amp; propCount &gt; maxProperties) {
+    throwErrorWithCode('MAX_PROPERTIES',
+                       'Number of properties is too many (' + propCount + ' properties), maximum ' + maxProperties);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMaximum" id="apidoc.element.swagger-tools.validators.validateMaximum">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMaximum
+        <span class="apidocSignatureSpan">(val, maximum, type, exclusive)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaximum = function (val, maximum, type, exclusive) {
+  var code = exclusive === true ? 'MAXIMUM_EXCLUSIVE' : 'MAXIMUM';
+  var testMax;
+  var testVal;
+
+  if (_.isUndefined(exclusive)) {
+    exclusive = false;
+  }
+
+  if (type === 'integer') {
+    testVal = parseInt(val, 10);
+  } else if (type === 'number') {
+    testVal = parseFloat(val);
+  }
+
+  if (!_.isUndefined(maximum)) {
+    testMax = parseFloat(maximum);
+
+    if (exclusive &amp;&amp; testVal &gt;= testMax) {
+      throwErrorWithCode(code, 'Greater than or equal to the configured maximum (' + maximum + '): ' + val);
+    } else if (testVal &gt; testMax) {
+      throwErrorWithCode(code, 'Greater than the configured maximum (' + maximum + '): ' + val);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMinItems" id="apidoc.element.swagger-tools.validators.validateMinItems">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinItems
+        <span class="apidocSignatureSpan">(val, minItems)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMinItems = function (val, minItems) {
+  if (!_.isUndefined(minItems) &amp;&amp; val.length &lt; minItems) {
+    throwErrorWithCode('ARRAY_LENGTH_SHORT', 'Array is too short (' + val.length + '), minimum ' + minItems);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMinLength" id="apidoc.element.swagger-tools.validators.validateMinLength">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinLength
+        <span class="apidocSignatureSpan">(val, minLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMinLength = function (val, minLength) {
+  if (!_.isUndefined(minLength) &amp;&amp; val.length &lt; minLength) {
+    throwErrorWithCode('MIN_LENGTH', 'String is too short (' + val.length + ' chars), minimum ' + minLength);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMinProperties" id="apidoc.element.swagger-tools.validators.validateMinProperties">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinProperties
+        <span class="apidocSignatureSpan">(val, minProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMinProperties = function (val, minProperties) {
+  var propCount = _.isPlainObject(val) ? Object.keys(val).length : 0;
+
+  if (!_.isUndefined(minProperties) &amp;&amp; propCount &lt; minProperties) {
+    throwErrorWithCode('MIN_PROPERTIES',
+                       'Number of properties is too few (' + propCount + ' properties), minimum ' + minProperties);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMinimum" id="apidoc.element.swagger-tools.validators.validateMinimum">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMinimum
+        <span class="apidocSignatureSpan">(val, minimum, type, exclusive)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMinimum = function (val, minimum, type, exclusive) {
+  var code = exclusive === true ? 'MINIMUM_EXCLUSIVE' : 'MINIMUM';
+  var testMin;
+  var testVal;
+
+  if (_.isUndefined(exclusive)) {
+    exclusive = false;
+  }
+
+  if (type === 'integer') {
+    testVal = parseInt(val, 10);
+  } else if (type === 'number') {
+    testVal = parseFloat(val);
+  }
+
+  if (!_.isUndefined(minimum)) {
+    testMin = parseFloat(minimum);
+
+    if (exclusive &amp;&amp; testVal &lt;= testMin) {
+      throwErrorWithCode(code, 'Less than or equal to the configured minimum (' + minimum + '): ' + val);
+    } else if (testVal &lt; testMin) {
+      throwErrorWithCode(code, 'Less than the configured minimum (' + minimum + '): ' + val);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateMultipleOf" id="apidoc.element.swagger-tools.validators.validateMultipleOf">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateMultipleOf
+        <span class="apidocSignatureSpan">(val, multipleOf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMultipleOf = function (val, multipleOf) {
+  if (!_.isUndefined(multipleOf) &amp;&amp; val % multipleOf !== 0) {
+    throwErrorWithCode('MULTIPLE_OF', 'Not a multiple of ' + multipleOf);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validatePattern" id="apidoc.element.swagger-tools.validators.validatePattern">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validatePattern
+        <span class="apidocSignatureSpan">(val, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validatePattern = function (val, pattern) {
+  if (!_.isUndefined(pattern) &amp;&amp; _.isNull(val.match(new RegExp(pattern)))) {
+    throwErrorWithCode('PATTERN', 'Does not match required pattern: ' + pattern);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateRequiredness" id="apidoc.element.swagger-tools.validators.validateRequiredness">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateRequiredness
+        <span class="apidocSignatureSpan">(val, required)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateRequiredness = function (val, required) {
+  if (!_.isUndefined(required) &amp;&amp; required === true &amp;&amp; _.isUndefined(val)) {
+    throwErrorWithCode('REQUIRED', 'Is required');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+paramName = schema.name;
+paramPath = swaggerVersion === '1.2' ?
+  req.swagger.operationPath.concat(['params', paramIndex.toString()]) :
+  parameter.path;
+val = req.swagger.params[paramName].value;
+
+// Validate requiredness
+validators.<span class="apidocCodeKeywordSpan">validateRequiredness</span>(val, schema.required);
+
+// Quick return if the value is not present
+if (_.isUndefined(val)) {
+  return oCallback();
+}
+
+validateValue(req, schema, paramPath, val, oCallback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateSchemaConstraints" id="apidoc.element.swagger-tools.validators.validateSchemaConstraints">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateSchemaConstraints
+        <span class="apidocSignatureSpan">(version, schema, path, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateSchemaConstraints = function (version, schema, path, val) {
+  var resolveSchema = function (schema) {
+    var resolved = schema;
+
+    if (resolved.schema) {
+      path = path.concat(['schema']);
+
+      resolved = resolveSchema(resolved.schema);
+    }
+
+    return resolved;
+  };
+
+  var type = schema.type;
+  var allowEmptyValue;
+
+  if (!type) {
+    if (!schema.schema) {
+      if (path[path.length - 2] === 'responses') {
+        type = 'void';
+      } else {
+        type = 'object';
+      }
+    } else {
+      schema = resolveSchema(schema);
+      type = schema.type || 'object';
+    }
+  }
+
+  allowEmptyValue = schema ? schema.allowEmptyValue === true : false;
+
+  try {
+    // Always perform this check even if there is no value
+    if (type === 'array') {
+      validateArrayType(schema);
+    }
+
+    // Default to default value if necessary
+    if (_.isUndefined(val)) {
+      val = version === '1.2' ? schema.defaultValue : schema.default;
+
+      path = path.concat([version === '1.2' ? 'defaultValue' : 'default']);
+    }
+
+    // If there is no explicit default value, return as all validations will fail
+    if (_.isUndefined(val)) {
+      return;
+    }
+
+    if (type === 'array') {
+      _.each(val, function (val, index) {
+        try {
+          validateSchemaConstraints(version, schema.items || {}, path.concat(index.toString()), val);
+        } catch (err) {
+          err.message = 'Value at index ' + index + ' ' + (err.code === 'INVALID_TYPE' ? 'is ' : '') +
+            err.message.charAt(0).toLowerCase() + err.message.substring(1);
+
+          throw err;
+        }
+      });
+    } else {
+      validateTypeAndFormat(version, val, type, schema.format, allowEmptyValue);
+    }
+
+    // Validate enum
+    validateEnum(val, schema.enum);
+
+    // Validate maximum
+    validateMaximum(val, schema.maximum, type, schema.exclusiveMaximum);
+
+
+    // Validate maxItems (Swagger 2.0+)
+    validateMaxItems(val, schema.maxItems);
+
+    // Validate maxLength (Swagger 2.0+)
+    validateMaxLength(val, schema.maxLength);
+
+    // Validate maxProperties (Swagger 2.0+)
+    validateMaxProperties(val, schema.maxProperties);
+
+    // Validate minimum
+    validateMinimum(val, schema.minimum, type, schema.exclusiveMinimum);
+
+    // Validate minItems
+    validateMinItems(val, schema.minItems);
+
+    // Validate minLength (Swagger 2.0+)
+    validateMinLength(val, schema.minLength);
+
+    // Validate minProperties (Swagger 2.0+)
+    validateMinProperties(val, schema.minProperties);
+
+    // Validate multipleOf (Swagger 2.0+)
+    validateMultipleOf(val, schema.multipleOf);
+
+    // Validate pattern (Swagger 2.0+)
+    validatePattern(val, schema.pattern);
+
+    // Validate uniqueItems
+    validateUniqueItems(val, schema.uniqueItems);
+  } catch (err) {
+    err.path = path;
+
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!_.isUndefined(data) &amp;&amp; data.indexOf(val) &gt; -1) {
+    createErrorOrWarning('DUPLICATE_' + codeSuffix, msgPrefix + ' already defined: ' + val, path, dest);
+  }
+};
+
+var validateSchemaConstraints = function (documentMetadata, schema, path, results, skip) {
+  try {
+    validators.<span class="apidocCodeKeywordSpan">validateSchemaConstraints</span>(documentMetadata.swaggerVersion, schema, path
+, undefined);
+  } catch (err) {
+    if (!skip) {
+      createErrorOrWarning(err.code, err.message, err.path, results.errors);
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateTypeAndFormat" id="apidoc.element.swagger-tools.validators.validateTypeAndFormat">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateTypeAndFormat
+        <span class="apidocSignatureSpan">(version, val, type, format, allowEmptyValue, skipError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateTypeAndFormat(version, val, type, format, allowEmptyValue, skipError) {
+  var result = true;
+  var oVal = val;
+
+  // If there is an empty value and we allow empty values, the value is always valid
+  if (allowEmptyValue === true &amp;&amp; val === '') {
+    return;
+  }
+
+  if (_.isArray(val)) {
+    _.each(val, function (aVal, index) {
+      if (!validateTypeAndFormat(version, aVal, type, format, allowEmptyValue, true)) {
+        throwErrorWithCode('INVALID_TYPE', 'Value at index ' + index + ' is not a valid ' + type + ': ' + aVal);
+      }
+    });
+  } else {
+    switch (type) {
+    case 'boolean':
+      // Coerce the value only for Swagger 1.2
+      if (version === '1.2' &amp;&amp; _.isString(val)) {
+        if (val === 'false') {
+          val = false;
+        } else if (val === 'true') {
+          val = true;
+        }
+      }
+
+      result = _.isBoolean(val);
+      break;
+    case 'integer':
+      // Coerce the value only for Swagger 1.2
+      if (version === '1.2' &amp;&amp; _.isString(val)) {
+        val = Number(val);
+      }
+
+      result = _.isFinite(val) &amp;&amp; (Math.round(val) === val);
+      break;
+    case 'number':
+      // Coerce the value only for Swagger 1.2
+      if (version === '1.2' &amp;&amp; _.isString(val)) {
+        val = Number(val);
+      }
+
+      result = _.isFinite(val);
+      break;
+    case 'string':
+      if (!_.isUndefined(format)) {
+        switch (format) {
+        case 'date':
+          result = isValidDate(val);
+          break;
+        case 'date-time':
+          result = isValidDateTime(val);
+          break;
+        }
+      }
+      break;
+    case 'void':
+      result = _.isUndefined(val);
+      break;
+    }
+  }
+
+  if (skipError) {
+    return result;
+  } else if (!result) {
+    throwErrorWithCode('INVALID_TYPE',
+                       type !== 'void' ?
+                         'Not a valid ' + (_.isUndefined(format) ? '' : format + ' ') + type + ': ' + oVal :
+                         'Void does not allow a value');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swagger-tools.validators.validateUniqueItems" id="apidoc.element.swagger-tools.validators.validateUniqueItems">
+        function <span class="apidocSignatureSpan">swagger-tools.validators.</span>validateUniqueItems
+        <span class="apidocSignatureSpan">(val, isUnique)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateUniqueItems = function (val, isUnique) {
+  if (!_.isUndefined(isUnique) &amp;&amp; _.uniq(val).length !== val.length) {
+    throwErrorWithCode('ARRAY_UNIQUE', 'Does not allow duplicate values: ' + val.join(', '));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
